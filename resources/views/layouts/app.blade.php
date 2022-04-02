@@ -9,10 +9,14 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
+    {{--
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap"> --}}
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="{{ asset('fonts/bootstrap-icons.css') }}">
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -20,10 +24,10 @@
 
 <body class="font-sans antialiased">
     <div class="min-h-screen bg-gray-100">
-        @include('layouts.navigation')
+        <x-navigation></x-navigation>
 
         <!-- Page Content -->
-        <main class="w-11/12 sm:w-10/12 mx-auto">
+        <main class="pt-20 w-10/12 sm:w-8/12 mx-auto">
             {{ $slot }}
         </main>
     </div>
