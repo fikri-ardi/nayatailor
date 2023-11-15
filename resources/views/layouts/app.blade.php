@@ -5,7 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
+    {{--
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> --}}
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Fonts -->
@@ -14,11 +15,14 @@
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
-    <!-- Bootstrap Icons -->
+    <!-- Bootstrap -->
     <link rel="stylesheet" href="{{ asset('fonts/bootstrap-icons.css') }}">
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+
+    <!-- Additional Elements -->
+    {{ $head ?? null }}
 </head>
 
 <body class="font-sans antialiased">
@@ -26,10 +30,11 @@
         <x-navigation></x-navigation>
 
         <!-- Page Content -->
-        <main class="pt-20 w-10/12 sm:w-8/12 mx-auto">
+        <main class="pt-20 w-10/12 sm:w-11/12 mx-auto">
             {{ $slot }}
         </main>
     </div>
+
 </body>
 
 </html>
