@@ -24,16 +24,13 @@ class Navigation extends Component
     public function render()
     {
         $links = [
-            'Home' => [
-                'route' => route('home')
-            ],
-            'Gallery' => [
-                'route' => route('home') . '#Gallery'
-            ],
-            'Contact' => [
+            'Tentang Nayatailor' => [
                 'route' => route('home') . '#Contact'
             ],
-            'About' => [
+            'Promo' => [
+                'route' => route('home') . '#Contact'
+            ],
+            'Nayatailor Care' => [
                 'route' => route('home') . '#About'
             ]
         ];
