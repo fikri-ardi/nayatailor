@@ -39,8 +39,8 @@
 
             {{-- Action Button --}}
             <div class="space-x-3">
-                <x-button-link href="#" class="text-sm border border-yellow-500 !bg-white !text-yellow-500">Masuk</x-button-link>
-                <x-button-link href="#" class="text-sm">Daftar</x-button-link>
+                <x-button-link href="{{ route('login') }}" class="text-sm border border-yellow-500 !bg-white !text-yellow-500">Masuk</x-button-link>
+                <x-button-link href="{{ route('register') }}" class="text-sm">Daftar</x-button-link>
             </div>
         </div>
     </div>
