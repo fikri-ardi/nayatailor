@@ -39,8 +39,15 @@
 
             {{-- Action Button --}}
             <div class="space-x-3">
+                @auth
+                <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <x-button class="text-sm">Logout</x-button>
+                </form>
+                @else
                 <x-button-link href="{{ route('login') }}" class="text-sm border border-yellow-500 !bg-white !text-yellow-500">Masuk</x-button-link>
                 <x-button-link href="{{ route('register') }}" class="text-sm">Daftar</x-button-link>
+                @endauth
             </div>
         </div>
     </div>

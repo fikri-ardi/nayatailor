@@ -20,6 +20,7 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'role_id',
         'email',
         'password',
     ];
@@ -52,5 +53,10 @@ class User extends Authenticatable
         return new Attribute(
             set: fn ($value) => bcrypt($value)
         );
+    }
+
+    public function role()
+    {
+        return $this->belongsTo(Role::class);
     }
 }
