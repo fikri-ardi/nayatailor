@@ -2,21 +2,18 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\MorphMany;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Product extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'name',
-        'detail',
-        'price',
-        'size',
-    ];
+    protected $guarded = ['id'];
 
     public function owner(): BelongsTo
     {
@@ -25,6 +22,16 @@ class Product extends Model
 
     public function sizes(): BelongsToMany
     {
-        return $this->belongsToMany(Size::class);
+        return $this->belongsToMany(Size::class)->withTimestamps();
+    }
+
+    public function media(): MorphMany
+    {
+        return $this->morphMany(Media::class, 'mediable');
+    }
+
+    public function orders(): HasMany
+    {
+        return $this->hasMany(Order::class);
     }
 }
