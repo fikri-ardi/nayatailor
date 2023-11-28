@@ -19,10 +19,10 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(User::class);
-            $table->foreignIdFor(Product::class);
-            $table->foreignIdFor(Size::class);
-            $table->foreignIdFor(Address::class);
+            $table->foreignIdFor(User::class)->constrained()->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignIdFor(Product::class)->constrained()->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignIdFor(Size::class)->constrained()->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignIdFor(Address::class)->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->integer('qty');
             $table->bigInteger('gross_amount');
             $table->text('note');
