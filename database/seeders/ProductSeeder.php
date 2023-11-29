@@ -21,6 +21,7 @@ class ProductSeeder extends Seeder
             'name' => 'batik',
             'detail' => 'batik khas pekalongan',
             'price' => 100000,
+            'stock' => 137
         ]);
 
         $size = ProductSize::L->value;
