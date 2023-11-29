@@ -8,6 +8,6 @@ trait HasChatFeature
 {
     public function chats()
     {
-        return $this->belongsToMany(User::class, 'chats', 'user_id', 'chats_to_user_id')->withTimestamps();
+        return $this->belongsToMany(User::class, 'chats', 'user_id', 'chats_to_user_id')->withTimestamps()->withPivot('body');
     }
 }
