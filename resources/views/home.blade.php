@@ -5,7 +5,7 @@
         <div class="flex sm:flex-row flex-col-reverse rounded-xl">
             <div class="mr-2 space-y-6 flex flex-col justify-center mt-4 sm:mt-0">
                 <h1 class="text-2xl sm:text-4xl font-bold text-slate-900">Lorem ipsum dolor sit amet consectetur adipisicing
-                    elit.</h1>
+                    elit. </h1>
                 <p class="text-slate-500 leading-relaxed">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore voluptatum deserunt
                     molestias
                     saepe voluptatem recusandae quos
