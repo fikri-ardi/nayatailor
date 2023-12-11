@@ -9,10 +9,6 @@ class HomeController extends Controller
 {
     public function index()
     {
-        foreach (User::first()->chats as $chat) {
-            dd($chat->pivot->body);
-        }
-
         return view('home');
     }
 }
