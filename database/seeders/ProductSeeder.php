@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Enums\ProductSize;
+use App\Models\Media;
 use App\Models\Product;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
