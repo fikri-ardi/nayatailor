@@ -16,10 +16,17 @@ class MediaSeeder extends Seeder
      */
     public function run()
     {
-        $product = Product::first();
-        $product->media()->create([
-            'type' => 'image',
-            'url' => 'https://down-id.img.susercontent.com/file/id-11134601-7r98z-lr3z1s5tn9s6bc'
+        $media = collect([
+            [
+                'type' => 'image',
+                'url' => 'https://down-id.img.susercontent.com/file/id-11134601-7r98z-lr3z1s5tn9s6bc'
+            ],
+            [
+                'type' => 'image',
+                'url' => 'https: //down-id.img.susercontent.com/file/id-11134207-7qula-liiwz30dp4yf8d'
+            ],
         ]);
+        $product = Product::first();
+        $media->each(fn ($media) => $product->media()->create($media));
     }
 }
