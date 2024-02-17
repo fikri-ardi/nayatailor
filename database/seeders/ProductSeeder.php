@@ -24,7 +24,7 @@ class ProductSeeder extends Seeder
             'stock' => 137
         ]);
 
-        $size = ProductSize::L->value;
-        $product->sizes()->attach($size);
+        $sizes = collect([ProductSize::XL->value, ProductSize::L->value, ProductSize::M->value]);
+        $sizes->each(fn ($size) => $product->sizes()->attach($size));
     }
 }

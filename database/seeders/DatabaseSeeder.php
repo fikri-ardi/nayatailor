@@ -3,7 +3,9 @@
 namespace Database\Seeders;
 
 use App\Models\Cart;
-use App\Models\Role;
+use App\Models\Media;
+use App\Models\Product;
+use App\Models\Size;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -26,5 +28,17 @@ class DatabaseSeeder extends Seeder
             OrderSeeder::class,
             CommentSeeder::class,
         ]);
+
+        Product::factory()->count(10)->hasMedia()->create();
+
+        /**
+         * Mengaitkan semua Product dengan Size yang telah disediakan secara acak
+         * yang mempunyai hubungan Many to many relationship
+         */
+        $sizes = Size::all();
+        Product::all()->each(function ($product) use ($sizes) {
+            $randomizedSizes = collect(range(1, count($sizes), rand(1, count($sizes) - 1)));
+            $randomizedSizes->each(fn ($size) => $product->sizes()->attach($size));
+        });
     }
 }

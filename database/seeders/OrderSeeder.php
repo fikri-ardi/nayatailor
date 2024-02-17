@@ -20,14 +20,15 @@ class OrderSeeder extends Seeder
     {
         $user = User::first();
         $product = Product::first();
+        $qty = 1;
 
         Order::create([
             'user_id' => $user->id,
-            'product_id' => 1,
+            'product_id' => $product->id,
             'size_id' => ProductSize::L,
             'address_id' => $user->addresses()->first()->id,
-            'qty' => 2,
-            'gross_amount' => 2 * $product->price,
+            'qty' => $qty,
+            'gross_amount' => $qty * $product->price,
             'note' => 'dikirim yang cepet yaa...',
             'status' => 'unpaid'
         ]);
