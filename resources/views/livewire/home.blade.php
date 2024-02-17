@@ -1,4 +1,4 @@
-<x-app-layout>
+<div>
     <x-blur class="bg-yellow-500 top-0 -left-20 bg-opacity-50"></x-blur>
 
     {{-- Carrousel --}}
@@ -27,8 +27,20 @@
         </div>
     </div>
 
-    <section class="min-h-screen flex justify-between">
-        <div class="card bg-red-500 w-64 h-96 rounded-2xl"></div>
+    <section>
+        <div class="grid grid-cols-4 gap-7">
+            @foreach ($products as $product)
+            <div class="w-full gap-y-8">
+                <div class="h-96 rounded-2xl overflow-hidden">
+                    <img class="w-full h-full object-cover" src="{{ $product->media()->first()->url }}" alt="{{ $product->name }}">
+                </div>
+                <div class="p-2 mt-1">
+                    <div class="font-semibold text-lg">{{ str(ucwords(($product->name)))->words(4) }}</div>
+                    <div class="text-slate-8">{{ str($product->detail)->ucfirst()->words(4) }}</div>
+                    <div class="font-bold text-lg text-yellow-600">Rp {{ number_format($product->price, 0, 0, '.') }}</div>
+                </div>
+            </div>
+            @endforeach
+        </div>
     </section>
-
-</x-app-layout>
+</div>

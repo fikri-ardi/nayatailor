@@ -1,10 +1,10 @@
 <?php
 
-use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OrderController;
+use App\Http\Livewire\Home;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/', Home::class)->name('home');
 Route::view('/about', 'about')->name('about');
 
 Route::get('/order', [OrderController::class, 'index']);
