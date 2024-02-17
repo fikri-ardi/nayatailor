@@ -25,7 +25,7 @@ class Navigation extends Component
     {
         $links = [
             'Tentang Nayatailor' => [
-                'route' => route('home') . '#Contact'
+                'route' => route('about')
             ],
             'Promo' => [
                 'route' => route('home') . '#Contact'
