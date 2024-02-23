@@ -34,7 +34,7 @@
         <x-navigation></x-navigation>
 
         <!-- Page Content -->
-        <main class="pt-20 w-10/12 sm:w-11/12 mx-auto">
+        <main class="pt-28 w-10/12 sm:w-11/12 mx-auto">
             {{ $slot }}
         </main>
     </div>

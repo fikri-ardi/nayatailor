@@ -19,11 +19,19 @@ class MediaSeeder extends Seeder
         $media = collect([
             [
                 'type' => 'image',
-                'url' => 'https://down-id.img.susercontent.com/file/id-11134601-7r98z-lr3z1s5tn9s6bc'
+                'url' => 'https://dynamic.zacdn.com/J2iYxTHpNkuRdOzrdaww9prpEnQ=/filters:quality(70):format(webp)/https://static-id.zacdn.com/p/skechers-7017-5319034-1.jpg'
             ],
             [
                 'type' => 'image',
-                'url' => 'https: //down-id.img.susercontent.com/file/id-11134207-7qula-liiwz30dp4yf8d'
+                'url' => 'https://dynamic.zacdn.com/SoSGvygKGQX1-Zh23SZ1CZt_B_4=/filters:quality(70):format(webp)/https://static-id.zacdn.com/p/skechers-7017-5319034-2.jpg'
+            ],
+            [
+                'type' => 'image',
+                'url' => 'https://dynamic.zacdn.com/D1dA5Kz7vFCZBJqajil1jVgeu8c=/filters:quality(70):format(webp)/https://static-id.zacdn.com/p/skechers-7017-5319034-3.jpg'
+            ],
+            [
+                'type' => 'image',
+                'url' => 'https://dynamic.zacdn.com/gyzKRoVBks1sEgEHw976gWUIAtg=/filters:quality(70):format(webp)/https://static-id.zacdn.com/p/skechers-7018-5319034-4.jpg'
             ],
         ]);
         $product = Product::first();

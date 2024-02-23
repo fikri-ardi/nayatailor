@@ -30,7 +30,7 @@
     <section>
         <div class="grid grid-cols-4 gap-7">
             @foreach ($products as $product)
-            <a wire:navigate href="{{ route('products.show') }}">
+            <a wire:navigate href="{{ route('products.show', $product->id) }}">
                 <div class="w-full">
                     <div class="h-96 rounded-2xl overflow-hidden hover:bg-black transition-all duration-500">
                         <img class="w-full h-full object-cover hover:opacity-70 hover:scale-105 transition-all duration-500"
@@ -39,7 +39,7 @@
                     <div class="p-2 mt-1">
                         <div class="font-semibold text-lg">{{ str(ucwords(($product->name)))->words(4) }}</div>
                         <div class="text-slate-8">{{ str($product->detail)->ucfirst()->words(4) }}</div>
-                        <div class="font-bold text-lg text-yellow-600">Rp {{ number_format($product->price, 0, 0, '.') }}</div>
+                        <div class="font-bold text-lg text-yellow-600">Rp {{ $product->price }}</div>
                     </div>
                 </div>
             </a>

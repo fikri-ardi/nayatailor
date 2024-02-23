@@ -6,7 +6,7 @@ use App\Http\Livewire\ShowProduct;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', Home::class)->name('home');
-Route::get('/products', ShowProduct::class)->name('products.show');
+Route::get('/products/{product}', ShowProduct::class)->name('products.show');
 Route::view('/about', 'about')->name('about');
 
 Route::get('/order', [OrderController::class, 'index']);

@@ -22,7 +22,7 @@ class ProductFactory extends Factory
         return [
             'user_id' => mt_rand(1, $totalUser),
             'name' => $this->faker->sentence(3),
-            'detail' => $this->faker->text(),
+            'detail' => $this->faker->text(100),
             'price' => $this->faker->numberBetween(100000, 200000),
             'stock' => $this->faker->numberBetween(100, 200)
         ];
