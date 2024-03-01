@@ -13,19 +13,19 @@
       <table>
         <tr>
           <td>Nama :</td>
-          <td>{{ $order->name }}</td>
+          <td>{{ $order->user->name }}</td>
         </tr>
         <tr>
           <td>Alamat :</td>
-          <td>{{ $order->address }}</td>
+          <td>{{ $order->address->name }}</td>
         </tr>
         <tr>
           <td>No. HP :</td>
-          <td>{{ $order->phone }}</td>
+          <td>{{ $order->user->phone }}</td>
         </tr>
         <tr>
           <td>Total Harga :</td>
-          <td>{{ $order->total_price }}</td>
+          <td>{{ $order->gross_amount }}</td>
         </tr>
       </table>
       <button class="px-3 py-2 bg-slate-800 text-white" id="pay-button">Bayar</button>
@@ -50,7 +50,7 @@
             },
             onPending: function (result) {
               /* You may add your own implementation here */
-              alert("wating your payment!"); console.log(result);
+              alert("waiting your payment!"); console.log(result);
             },
             onError: function (result) {
               /* You may add your own implementation here */

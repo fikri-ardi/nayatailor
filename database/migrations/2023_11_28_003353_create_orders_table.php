@@ -25,7 +25,7 @@ return new class extends Migration
             $table->foreignIdFor(Address::class)->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->integer('qty');
             $table->bigInteger('gross_amount');
-            $table->text('note');
+            $table->text('note')->nullable();
             $table->enum('status', ['paid', 'unpaid']);
             $table->timestamps();
         });

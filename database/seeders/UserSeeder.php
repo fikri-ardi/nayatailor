@@ -19,6 +19,7 @@ class UserSeeder extends Seeder
             'name' => 'Fikri',
             'role_id' => UserRole::Admin,
             'email' => 'fan10062003@gmail.com',
+            'phone' => '087784466088',
             'password' => 'password',
             'email_verified_at' => now(),
         ]);

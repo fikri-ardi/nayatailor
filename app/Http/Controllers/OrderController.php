@@ -14,8 +14,11 @@ class OrderController extends Controller
 
     public function checkout(Request $request)
     {
-        $request->request->add(['total_price' => $request->qty * 10000, 'status' => 'unpaid']);
-        $order = Order::create($request->all());
+        $request->request->add(['gross_amount' => $request->qty * 10000, 'status' => 'unpaid']);
+        $request->request->add(['product_id' => 1]);
+        $request->request->add(['size_id' => 1]);
+        $request->request->add(['address_id' => 1]);
+        $order = auth()->user()->orders()->create($request->all());
 
         // Set your Merchant Server Key
         \Midtrans\Config::$serverKey = config('midtrans.server_key');
@@ -29,12 +32,12 @@ class OrderController extends Controller
         $params = array(
             'transaction_details' => array(
                 'order_id' => $order->id,
-                'gross_amount' => $order->total_price,
+                'gross_amount' => $order->gross_amount,
             ),
             'customer_details' => array(
-                'first_name' => $order->name,
+                'first_name' => $order->user->name,
                 'last_name' => '',
-                'phone' => $order->phone,
+                'phone' => $order->user->phone,
             ),
         );
 

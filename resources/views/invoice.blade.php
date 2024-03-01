@@ -6,19 +6,19 @@
             <table>
                 <tr>
                     <td>Nama :</td>
-                    <td>{{ $order->name }}</td>
+                    <td>{{ $order->user->name }}</td>
                 </tr>
                 <tr>
                     <td>Alamat :</td>
-                    <td>{{ $order->address }}</td>
+                    <td>{{ $order->address->name }}</td>
                 </tr>
                 <tr>
                     <td>No. HP :</td>
-                    <td>{{ $order->phone }}</td>
+                    <td>{{ $order->user->phone }}</td>
                 </tr>
                 <tr>
                     <td>Total Harga :</td>
-                    <td>{{ $order->total_price }}</td>
+                    <td>{{ $order->gross_amount }}</td>
                 </tr>
                 <tr>
                     <td>Status :</td>
