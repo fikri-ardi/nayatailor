@@ -18,6 +18,7 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="{{ asset('fonts/bootstrap-icons.css') }}">
@@ -29,7 +30,7 @@
     {{ $head ?? null }}
 </head>
 
-<body class="font-sans antialiased">
+<body x-data="{blur: false}" class="font-sans antialiased">
     <div class="min-h-screen">
         <x-navigation></x-navigation>
 
@@ -39,6 +40,12 @@
         </main>
     </div>
 
+    {{-- Blur Effect --}}
+    <div :class="blur ? 'show' : ''"
+        class="fixed flex left-0 right-0 bottom-0 top-0 opacity-0 h-screen -translate-y-full backdrop-blur-md transition-all duration-300 z-40">
+        <div class="fixed left-0 right-0 bottom-0 top-0 h-screen blur-xl bg-black opacity-0 transition-opacity">
+        </div>
+    </div>
 </body>
 
 </html>

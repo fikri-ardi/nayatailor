@@ -19,7 +19,7 @@ return new class extends Migration
             $table->foreignIdFor(User::class)->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->string('name');
             $table->text('detail');
-            $table->decimal('price', $precision = 8, $scale = 2);
+            $table->integer('price');
             $table->integer('stock');
             $table->timestamps();
         });

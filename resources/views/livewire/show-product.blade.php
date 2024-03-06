@@ -42,17 +42,17 @@
 
             {{-- Quantity --}}
             <div class="flex items-center">
-                <div x-data="{qty: 1}" class="relative flex items-center max-w-[8rem]">
-                    <button type="button" x-on:click="qty <= 1 ? qty = 1 : qty--"
+                <div class="relative flex items-center max-w-[8rem]">
+                    <button wire:click="decrement" type="button"
                         class=" hover:bg-gray-100 border border-gray-300 rounded-s-lg p-3 h-11 focus:ring-gray-100 focus:ring-2 focus:outline-none">
                         <svg class="w-3 h-3 text-yellow-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 2">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h16" />
                         </svg>
                     </button>
-                    <input type="text" x-model="qty"
+                    <input type="text"
                         class="font-semibold text-base border-x-0 border-gray-300 h-11 text-center text-gray-900 focus:ring-blue-500 focus:border-blue-500 block w-full py-2.5 "
-                        placeholder="1" min="1" required />
-                    <button type="button" x-on:click="qty++"
+                        placeholder="1" min="1" value="{{ $qty }}" required />
+                    <button wire:click="increment" type="button"
                         class="hover:bg-gray-100 border border-gray-300 rounded-e-lg p-3 h-11 focus:ring-gray-100  focus:ring-2 focus:outline-none">
                         <svg class="w-3 h-3 text-yellow-500 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16" />
@@ -82,7 +82,7 @@
             {{-- Subtotal --}}
             <div class="flex justify-between items-center">
                 <div class="text-slate-500">Subtotal</div>
-                <div class="font-semibold  text-2xl">Rp100.000</div>
+                <div class="font-semibold text-2xl">Rp {{ number_format($subtotal, 0, 0, '.') }}</div>
             </div>
 
             {{-- Buy or Cart --}}

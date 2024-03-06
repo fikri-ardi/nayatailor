@@ -1,8 +1,8 @@
 <?php
 
 use App\Http\Controllers\OrderController;
-use App\Http\Livewire\Home;
-use App\Http\Livewire\ShowProduct;
+use App\Livewire\Home;
+use App\Livewire\ShowProduct;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', Home::class)->name('home');

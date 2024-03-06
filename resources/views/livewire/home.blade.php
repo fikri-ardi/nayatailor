@@ -18,7 +18,7 @@
                 </div>
             </div>
             <div
-                class="h-52 sm:h-96 sm:w-10/12 flex items-center justify-center text-slate-900 bg-gradient-to-l from-slate-300 bg-opacity-5 rounded-xl backdrop-blur-xl">
+                class="h-52 sm:h-96 sm:w-10/12 flex items-center justify-center text-slate-900 bg-gradient-to-l from-slate-300 bg-opacity-5 rounded-xl">
                 <div class="relative">
                     <i class="absolute bi bi-stars text-3xl -top-3 -right-3"></i>
                     <i class="bi bi-bag-heart-fill text-9xl"></i>

@@ -35,11 +35,4 @@ class Product extends Model
     {
         return $this->hasMany(Order::class);
     }
-
-    public function price(): Attribute
-    {
-        return new Attribute(
-            get: fn ($value) => number_format($value, 0, 0, ".")
-        );
-    }
 }
