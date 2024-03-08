@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Models\Cart;
 use App\Models\Product;
 use Livewire\Component;
 use Psy\CodeCleaner\AssignThisVariablePass;
@@ -10,6 +11,7 @@ class ShowProduct extends Component
 {
     public Product $product;
     public $qty = 1;
+    public $size_id;
 
     public function increment()
     {
@@ -19,6 +21,16 @@ class ShowProduct extends Component
     public function decrement()
     {
         $this->qty <= 1 ? $this->qty = 1 : $this->qty--;
+    }
+
+    public function addToCart()
+    {
+        auth()->user()->carts()->create([
+            'product_id' => $this->product->id,
+            'size_id' => $this->size_id,
+            'qty' => $this->qty,
+        ]);
+        $this->dispatch('product-added-to-cart');
     }
 
     public function render()

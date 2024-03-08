@@ -39,7 +39,7 @@
                     <div class="p-2 mt-1">
                         <div class="font-semibold text-lg">{{ str(ucwords(($product->name)))->words(4) }}</div>
                         <div class="text-slate-8">{{ str($product->detail)->ucfirst()->words(4) }}</div>
-                        <div class="font-bold text-lg text-yellow-600">Rp {{ $product->price }}</div>
+                        <div class="font-bold text-lg text-yellow-600">Rp {{ number_format($product->price, 0, 0,'.') }}</div>
                     </div>
                 </div>
             </a>

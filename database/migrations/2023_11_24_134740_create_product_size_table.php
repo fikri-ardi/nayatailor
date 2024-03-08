@@ -16,9 +16,9 @@ return new class extends Migration
     public function up()
     {
         Schema::create('product_size', function (Blueprint $table) {
-            $table->id();
             $table->foreignIdFor(Product::class)->constrained();
             $table->foreignIdFor(Size::class)->constrained();
+            $table->primary(['product_id', 'size_id']);
             $table->timestamps();
         });
     }

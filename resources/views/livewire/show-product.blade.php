@@ -17,7 +17,7 @@
 
         {{-- Price --}}
         <div class="my-6 font-semibold text-xl">
-            Rp {{ $product->price }}
+            Rp {{ number_format($product->price, 0,0,'.') }}
         </div>
 
         {{-- Size --}}
@@ -25,7 +25,7 @@
             <div class="font-semibold text-xl mb-3">Ukuran</div>
             <div x-data="{checked: false}" class="flex space-x-1">
                 @foreach ($product->sizes as $size)
-                <label for="{{ $size->id }}" x-on:click="checked = {{ $size->id }}"
+                <label for="{{ $size->id }}" x-on:click="checked = {{ $size->id }}, $wire.size_id = {{ $size->id }}"
                     :class="checked == {{ $size->id }} ? '!text-yellow-500 !border-yellow-500 !bg-yellow-100' : ''"
                     class="hover:cursor-pointer px-2 py-2 w-14 flex justify-center hover:text-yellow-500 hover:border-yellow-500 border border-slate-400 text-slate-400 rounded-lg">
                     <input class="hidden" x-bind:checked="checked == {{ $size->id }}" type="radio" name="size_id" id="{{ $size->id }}"
@@ -91,7 +91,7 @@
                     <x-button class="w-full !bg-white text-yellow-500 border border-yellow-500">Beli</x-button>
                 </div>
                 <div class="w-full">
-                    <x-button class="w-full" href="#">+ Keranjang</x-button>
+                    <x-button class="w-full" href="#" wire:click="addToCart">+ Keranjang</x-button>
                 </div>
             </div>
 

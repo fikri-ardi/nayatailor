@@ -17,10 +17,10 @@ return new class extends Migration
     public function up()
     {
         Schema::create('carts', function (Blueprint $table) {
-            $table->id();
             $table->foreignIdFor(User::class)->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->foreignIdFor(Product::class)->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->foreignIdFor(Size::class)->constrained()->onUpdate('cascade')->onDelete('cascade');
+            $table->primary(['user_id', 'product_id', 'size_id']);
             $table->integer('qty');
             $table->timestamps();
         });

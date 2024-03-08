@@ -32,7 +32,7 @@
 
 <body x-data="{blur: false}" class="font-sans antialiased">
     <div class="min-h-screen">
-        <x-navigation></x-navigation>
+        <livewire:navigation />
 
         <!-- Page Content -->
         <main class="pt-28 w-10/12 sm:w-11/12 mx-auto">
