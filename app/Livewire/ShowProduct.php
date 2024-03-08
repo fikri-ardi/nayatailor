@@ -30,7 +30,7 @@ class ShowProduct extends Component
             'size_id' => $this->size_id,
             'qty' => $this->qty,
         ]);
-        $this->dispatch('product-added-to-cart');
+        $this->dispatch('product-added-to-cart')->to(Navigation::class);
     }
 
     public function render()
