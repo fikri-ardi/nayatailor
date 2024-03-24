@@ -43,7 +43,8 @@
                 <div class="flex items-center space-x-10">
                     <div class="flex items-center space-x-1">
                         {{-- Cart --}}
-                        <div x-data="{dropdownCart: false}" x-on:mouseenter="dropdownCart = true" x-on:mouseleave="dropdownCart = false"
+                        <div x-data="{dropdownCart: false}" x-on:mouseenter="dropdownCart = true, blur = true"
+                            x-on:mouseleave="dropdownCart = false, blur = false"
                             class="relative flex items-center justify-center p-2 rounded-lg hover:bg-slate-100 cursor-pointer">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
                                 class="w-6 h-6">
@@ -125,7 +126,8 @@
                     </div>
 
                     @auth
-                    <div x-data="{userProfile: false}" x-on:mouseenter="userProfile = true" x-on:mouseleave="userProfile = false"
+                    <div x-data="{userProfile: false}" x-on:mouseenter="userProfile = true, blur = true"
+                        x-on:mouseleave="userProfile = false, blur = false"
                         class="relative flex items-center p-2 rounded-md space-x-1 cursor-pointer hover:bg-slate-100 transition-all">
                         <div>
                             @if (auth()->user()->media)

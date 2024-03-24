@@ -19,13 +19,10 @@ class ProductSeeder extends Seeder
     {
         $product = Product::create([
             'user_id' => 1,
-            'name' => 'batik',
-            'detail' => 'batik khas pekalongan',
+            'name' => 'Skecher Uno Lite',
+            'detail' => 'Perbarui gaya Anda dengan Skechers Basic White Uno Lite: di mana kesan sporty bertemu dengan kesan elegan dalam setiap langkah.',
             'price' => 100000,
             'stock' => 137
         ]);
-
-        $sizes = collect([ProductSize::XL->value, ProductSize::L->value, ProductSize::M->value]);
-        $sizes->each(fn ($size) => $product->sizes()->attach($size));
     }
 }

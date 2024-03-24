@@ -1,7 +1,11 @@
-require('./bootstrap');
+import './bootstrap';
+import '../css/app.css';
+import {
+    Livewire,
+    Alpine
+} from '../../vendor/livewire/livewire/dist/livewire.esm';
+import Slider from './Slider.js';
 
-import Alpine from 'alpinejs';
+Alpine.data('Slider', Slider)
 
-window.Alpine = Alpine;
-
-Alpine.start();
+Livewire.start();

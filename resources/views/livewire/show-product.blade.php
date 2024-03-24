@@ -11,7 +11,7 @@
     {{-- Order Info --}}
     <div class="w-5/12">
         <div class="my-6">
-            <h2 class="text-2xl">{{ ucwords($product->name) }}</h2>
+            <h2 class="text-2xl leading-relaxed">{{ ucwords($product->name) }}</h2>
             <p class="text-slate-700 leading-relaxed">{{ str($product->detail)->ucfirst() }}</p>
         </div>
 

@@ -24,13 +24,13 @@ class DatabaseSeeder extends Seeder
             AddressSeeder::class,
             SizeSeeder::class,
             ProductSeeder::class,
-            MediaSeeder::class,
             CartSeeder::class,
             OrderSeeder::class,
             CommentSeeder::class,
         ]);
 
-        Product::factory()->count(10)->hasMedia()->create();
+        Product::factory()->count(7)->create();
+        $this->call(MediaSeeder::class);
 
         /**
          * Mengaitkan semua Product dengan Size yang telah disediakan secara acak

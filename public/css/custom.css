@@ -1,8 +1,8 @@
 .show{
-    transform: translateY(0);
-    opacity: 100;
+    transform: translateY(0)!important;
+    opacity: 100!important;
 }
 
 .show div{
-    opacity: 10%;
+    opacity: 10%!important;
 }

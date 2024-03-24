@@ -17,14 +17,15 @@
         rel="stylesheet">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="{{ asset('fonts/bootstrap-icons.css') }}">
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    @livewireStyles
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
 
     <!-- Additional Elements -->
     {{ $head ?? null }}
@@ -35,17 +36,19 @@
         <livewire:navigation />
 
         <!-- Page Content -->
-        <main class="pt-28 w-10/12 sm:w-11/12 mx-auto">
+        <main class="pt-24 w-10/12 sm:w-11/12 mx-auto">
             {{ $slot }}
         </main>
     </div>
 
     {{-- Blur Effect --}}
     <div :class="blur ? 'show' : ''"
-        class="fixed flex left-0 right-0 bottom-0 top-0 opacity-0 h-screen -translate-y-full backdrop-blur-md transition-all duration-300 z-40">
-        <div class="fixed left-0 right-0 bottom-0 top-0 h-screen blur-xl bg-black opacity-0 transition-opacity">
+        class="fixed flex left-0 right-0 bottom-0 top-0 opacity-0 h-screen backdrop-blur-sm -translate-y-full transition-all duration-500 z-40">
+        <div class="fixed left-0 right-0 bottom-0 top-0 h-screen opacity-0 transition-opacity">
         </div>
-    </div>
+        </class=>
+
+        @livewireScriptConfig
 </body>
 
 </html>
